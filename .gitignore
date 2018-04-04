@@ -3,3 +3,5 @@
 ################################################################################
 
 /ConnectedAnimationApp/obj
+/ConnectedAnimationApp/bin/x86/Debug
+/.vs/ConnectedAnimationApp/v15/Server/sqlite3
