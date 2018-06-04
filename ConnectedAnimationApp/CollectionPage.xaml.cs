@@ -39,7 +39,7 @@ namespace ConnectedAnimationApp
             }
 
             // Navigate to the DetailedInfoPage.
-            Frame.Navigate(typeof(DetailedInfoPage), _storeditem);
+            Frame.Navigate(typeof(DetailedInfoPage), _storeditem, new SuppressNavigationTransitionInfo());
         }
 
 
