@@ -96,21 +96,25 @@ namespace ConnectedAnimationApp
         // Setup methods...
         void ShowBackArrow()
         {
-            Frame rootFrame = Window.Current.Content as Frame;
+            //Frame rootFrame = Window.Current.Content as Frame;
 
-            if (rootFrame.CanGoBack)
-            {
-                // Show UI in title bar if opted-in and in-app backstack is not empty.
-                SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility =
-                    AppViewBackButtonVisibility.Visible;
-            }
-            else
-            {
-                // Remove the UI from the title bar if in-app back stack is empty.
-                SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility =
-                    AppViewBackButtonVisibility.Collapsed;
-            }
+            //if (rootFrame.CanGoBack)
+            //{
+            //    // Show UI in title bar if opted-in and in-app backstack is not empty.
+            //    SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility =
+            //        AppViewBackButtonVisibility.Visible;
+            //}
+            //else
+            //{
+            //    // Remove the UI from the title bar if in-app back stack is empty.
+            //    SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility =
+            //        AppViewBackButtonVisibility.Collapsed;
+            //}
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.GoBack();
+        }
     }
 }

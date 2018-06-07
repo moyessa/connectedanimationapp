@@ -16,7 +16,7 @@
         <Grid x:Name="headerBackground" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="{ThemeResource SystemControlAcrylicWindowBrush}" />
 
         <Grid Height="32" VerticalAlignment="Top">
-            <Rectangle Width="48" Height="32" Fill="{ThemeResource SystemAccentColor}" HorizontalAlignment="Left"/>
+            <Button Width="50" Height="32" Background="{ThemeResource SystemAccentColor}" HorizontalAlignment="Left" Content="Back" Click="Button_Click"/>
             <TextBlock x:Name="titleTextBlock" Style="{ThemeResource CaptionTextBlockStyle}" Text="ConnectedAnimationSample" VerticalAlignment="Center"  Margin="60,0,0,0" />
         </Grid>
 
