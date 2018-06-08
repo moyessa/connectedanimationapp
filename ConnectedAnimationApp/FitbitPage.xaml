@@ -8,31 +8,34 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Grid HorizontalAlignment="Stretch">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="600" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-            <Grid Background="DarkCyan" Tapped="Grid_Tapped" Grid.ColumnSpan="2">
-                <Image Source="Assets\Images\2.jpg" Stretch="UniformToFill" VerticalAlignment="Center" />
-                <TextBlock Text="Header Text" Style="{ThemeResource HeaderTextBlockStyle}" Margin="24" VerticalAlignment="Bottom" Foreground="White" />
-            </Grid>
+        <ScrollViewer>
 
-            <Grid Background="DarkCyan" Height="400" Margin="24" Tapped="Grid_Tapped" Grid.Row="1">
-                <Image Source="Assets\Images\2.jpg" Stretch="UniformToFill" VerticalAlignment="Center" />
-                <TextBlock Text="Header Text" Style="{ThemeResource HeaderTextBlockStyle}" Margin="24" VerticalAlignment="Bottom" Foreground="White" />
-            </Grid>
+            <Grid HorizontalAlignment="Stretch">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="600" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid Background="DarkCyan" Tapped="Grid_Tapped" Grid.ColumnSpan="2">
+                    <Image Source="Assets\Images\2.jpg" Stretch="UniformToFill" VerticalAlignment="Center" />
+                    <TextBlock Text="Header Text" Style="{ThemeResource HeaderTextBlockStyle}" Margin="24" VerticalAlignment="Bottom" Foreground="White" />
+                </Grid>
 
-            <Grid Background="DarkCyan" Height="400" Margin="24" Tapped="Grid_Tapped" Grid.Row="1" Grid.Column="2">
-                <Image Source="Assets\Images\2.jpg" Stretch="UniformToFill" VerticalAlignment="Center" />
-                <TextBlock Text="Header Text" Style="{ThemeResource HeaderTextBlockStyle}" Margin="24" VerticalAlignment="Bottom" Foreground="White" />
-            </Grid>
+                <Grid Background="DarkCyan" Height="400" Margin="24" Tapped="Grid_Tapped" Grid.Row="1">
+                    <Image Source="Assets\Images\2.jpg" Stretch="UniformToFill" VerticalAlignment="Center" />
+                    <TextBlock Text="Header Text" Style="{ThemeResource HeaderTextBlockStyle}" Margin="24" VerticalAlignment="Bottom" Foreground="White" />
+                </Grid>
 
-        </Grid>
+                <Grid Background="DarkCyan" Height="400" Margin="24" Tapped="Grid_Tapped" Grid.Row="1" Grid.Column="2">
+                    <Image Source="Assets\Images\2.jpg" Stretch="UniformToFill" VerticalAlignment="Center" />
+                    <TextBlock Text="Header Text" Style="{ThemeResource HeaderTextBlockStyle}" Margin="24" VerticalAlignment="Bottom" Foreground="White" />
+                </Grid>
+
+            </Grid>
+        </ScrollViewer>
     </Grid>
 </Page>
