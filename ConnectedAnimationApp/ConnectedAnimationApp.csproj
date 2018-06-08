@@ -111,6 +111,12 @@
     <Compile Include="DetailedInfoPage.xaml.cs">
       <DependentUpon>DetailedInfoPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FitbitPage.xaml.cs">
+      <DependentUpon>FitbitPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FullSizeImagePage.xaml.cs">
+      <DependentUpon>FullSizeImagePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -126,10 +132,12 @@
     <None Include="ConnectedAnimationApp_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Images\highres.jpg" />
     <Content Include="Assets\Images\1.jpg" />
     <Content Include="Assets\Images\2.jpg" />
     <Content Include="Assets\Images\3.jpg" />
     <Content Include="Assets\Images\colorado.jpg" />
+    <Content Include="Assets\Images\highres2.png" />
     <Content Include="Assets\Images\Iceland.JPG" />
     <Content Include="Assets\Images\inverness.JPG" />
     <Content Include="Assets\Images\madrid.JPG" />
@@ -167,6 +175,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="DetailedInfoPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FitbitPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FullSizeImagePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

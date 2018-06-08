@@ -50,6 +50,10 @@ namespace ConnectedAnimationApp
                 case "card":
                     ContentFrame.Navigate(typeof(CardPage));
                     break;
+
+                case "fitbit":
+                    ContentFrame.Navigate(typeof(FitbitPage));
+                    break;
             }
 
         }

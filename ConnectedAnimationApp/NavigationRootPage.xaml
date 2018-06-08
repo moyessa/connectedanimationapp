@@ -16,6 +16,7 @@
             <NavigationView.MenuItems>
                 <NavigationViewItem Icon="List" Content="List Page" Tag="list" />
                 <NavigationViewItem Icon="Pictures" Content="Tips Page" Tag="card" />
+                <NavigationViewItem Icon="Placeholder" Content="Fitbit Page" Tag="fitbit" />
                 <NavigationViewItem Icon="Setting" Content="Config Page" Tag="config" />
             </NavigationView.MenuItems>
 
