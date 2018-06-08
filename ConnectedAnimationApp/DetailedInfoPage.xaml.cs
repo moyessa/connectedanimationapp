@@ -49,7 +49,7 @@ namespace ConnectedAnimationApp
         {
             base.OnNavigatingFrom(e);
 
-            ConnectedAnimationService.GetForCurrentView().PrepareToAnimate("ca2", detailedImage);
+            
         }
 
 
@@ -114,6 +114,8 @@ namespace ConnectedAnimationApp
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            ConnectedAnimationService.GetForCurrentView().PrepareToAnimate("ca2", detailedImage);
+
             Frame.GoBack();
         }
     }
