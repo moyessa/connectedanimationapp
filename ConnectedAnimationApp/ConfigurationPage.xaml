@@ -17,23 +17,22 @@
 
                 <Button Content="Start Animation" Click="Button_Click" HorizontalAlignment="Stretch" Style="{ThemeResource AccentButtonStyle}" Margin="5" />
                 <Button Content="Change Position" Click="Button_Click_1" HorizontalAlignment="Stretch" Margin="5" />
-                
-                <TextBlock Text="Duration" Style="{ThemeResource BodyTextBlockStyle}"  />
+
+                <TextBlock Text="Duration" Style="{ThemeResource BaseTextBlockStyle}" Margin="5,10,5,5"   />
                 <StackPanel Orientation="Horizontal" Margin="5">
                     <RadioButton Content="Default" IsChecked="True"  />
                     <RadioButton x:Name="SlowDurationRadioButton" Content="Slow" />
                 </StackPanel>
 
-                <TextBlock Text="Configuration" Style="{ThemeResource BodyTextBlockStyle}" />
+                <TextBlock Text="Configuration" Style="{ThemeResource BaseTextBlockStyle}" Margin="5,10,5,5" />
                 <StackPanel x:Name="ConfigurationStackPanel" Margin="5">
                     <RadioButton Content="Default" IsChecked="True"  />
                     <RadioButton Content="Gravity" />
                     <RadioButton Content="Direct" />
                     <RadioButton Content="Basic" />
                 </StackPanel>
-
-
             </StackPanel>
+            
             <Grid x:Name="RootGrid"  Width="500" Height="500" Background="White" Grid.Column="1" />
         </Grid>
     </Grid>

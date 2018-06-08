@@ -31,7 +31,6 @@ namespace ConnectedAnimationApp
             SetupPositionConfigurations();
 
             RootGrid.Children.Add(CreateOrGetElement1());
-            //PopupRoot.IsOpen = true;
 
             animationDefaultDuration = ConnectedAnimationService.GetForCurrentView().DefaultDuration;
         }
@@ -78,14 +77,27 @@ namespace ConnectedAnimationApp
                     Width = 50,
                     Height = 50,
                     Fill = new SolidColorBrush(Windows.UI.Colors.Red),
-                    VerticalAlignment = PositionConfigurations[PositionIndex].Item1.Item1,
-                    HorizontalAlignment = PositionConfigurations[PositionIndex].Item1.Item2,
-                //Shadow = new ThemeShadow(),
-                //Translation = new System.Numerics.Vector3(0, 0, 15)
-            };
+                    //Shadow = new ThemeShadow(),
+                    //Translation = new System.Numerics.Vector3(0, 0, 15)
+                };
+                //element1 = new TextBlock()
+                //{
+                //    Text = "I am text!",
+                //    FontSize = 30,
+                //    Foreground = new SolidColorBrush(Windows.UI.Colors.Black)
+                //};
+
+
+                UpdateElement1Position();
             }
 
             return element1;
+        }
+
+        void UpdateElement1Position()
+        {
+            (element1 as FrameworkElement).VerticalAlignment = PositionConfigurations[PositionIndex].Item1.Item1;
+            (element1 as FrameworkElement).HorizontalAlignment = PositionConfigurations[PositionIndex].Item1.Item2;
         }
 
         UIElement CreateOrGetElement2()
@@ -98,12 +110,19 @@ namespace ConnectedAnimationApp
                     Width = 75,
                     Height = 75,
                     Fill = new SolidColorBrush(Windows.UI.Colors.Blue),
-                    VerticalAlignment = PositionConfigurations[PositionIndex].Item2.Item1,
-                    HorizontalAlignment = PositionConfigurations[PositionIndex].Item2.Item2,
                 };
+
+                UpdateElement2Position();
             }
 
             return element2;
+        }
+
+        void UpdateElement2Position()
+        {
+            (element2 as FrameworkElement).VerticalAlignment = PositionConfigurations[PositionIndex].Item2.Item1;
+            (element2 as FrameworkElement).HorizontalAlignment = PositionConfigurations[PositionIndex].Item2.Item2;
+
         }
 
 
@@ -145,17 +164,14 @@ namespace ConnectedAnimationApp
             CreateOrGetElement1();
             CreateOrGetElement2();
 
-            (element1 as Rectangle).VerticalAlignment = PositionConfigurations[PositionIndex].Item1.Item1;
-            (element1 as Rectangle).HorizontalAlignment = PositionConfigurations[PositionIndex].Item1.Item2;
-
-            (element2 as Rectangle).VerticalAlignment = PositionConfigurations[PositionIndex].Item2.Item1;
-            (element2 as Rectangle).HorizontalAlignment = PositionConfigurations[PositionIndex].Item2.Item2;
+            UpdateElement1Position();
+            UpdateElement2Position();
         }
 
         private ConnectedAnimationConfiguration GetSelectedConfiguration()
         {
             List<RadioButton> buttons = new List<RadioButton>();
-            foreach(UIElement e in ConfigurationStackPanel.Children)
+            foreach (UIElement e in ConfigurationStackPanel.Children)
             {
                 if ((e as RadioButton) != null && (e as RadioButton).IsChecked == true)
                 {
@@ -180,7 +196,7 @@ namespace ConnectedAnimationApp
                     return new DirectConnectedAnimationConfiguration();
 
                 case "Basic":
-                    return new BasicConnectedAnimationConfiguration();                    
+                    return new BasicConnectedAnimationConfiguration();
             }
             return null;
         }
