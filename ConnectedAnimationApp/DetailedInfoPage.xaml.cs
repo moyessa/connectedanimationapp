@@ -22,7 +22,6 @@ namespace ConnectedAnimationApp
 
             // Store the item to be used in binding to UI
             DetailedObject = e.Parameter as CustomDataObject;
-            ShowBackArrow();
 
             ConnectedAnimation imageAnimation = ConnectedAnimationService.GetForCurrentView().GetAnimation("ca1");
             if (imageAnimation != null)
@@ -41,17 +40,6 @@ namespace ConnectedAnimationApp
 
             }
         }
-
-
-
-        // Create connected animation back to collection page.
-        protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
-        {
-            base.OnNavigatingFrom(e);
-
-            
-        }
-
 
 
         // Choreographed animations:
@@ -90,26 +78,6 @@ namespace ConnectedAnimationApp
         private void ImageAnimation_Completed(ConnectedAnimation sender, object args)
         {
             moreInfoPanel.Visibility = Visibility.Visible;
-        }
-
-
-        // Setup methods...
-        void ShowBackArrow()
-        {
-            //Frame rootFrame = Window.Current.Content as Frame;
-
-            //if (rootFrame.CanGoBack)
-            //{
-            //    // Show UI in title bar if opted-in and in-app backstack is not empty.
-            //    SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility =
-            //        AppViewBackButtonVisibility.Visible;
-            //}
-            //else
-            //{
-            //    // Remove the UI from the title bar if in-app back stack is empty.
-            //    SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility =
-            //        AppViewBackButtonVisibility.Collapsed;
-            //}
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
