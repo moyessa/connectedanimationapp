@@ -118,7 +118,11 @@ namespace ConnectedAnimationApp
 
             ConnectedAnimationService.GetForCurrentView().DefaultDuration = SlowDurationRadioButton.IsChecked == true ? TimeSpan.FromSeconds(1) : animationDefaultDuration;
 
-
+            var config = GetSelectedConfiguration();
+            if (config != null)
+            {
+                anim.Configuration = config;
+            }
 
             RootGrid.Children.Clear();
             RootGrid.Children.Add(DestinationElement);
@@ -147,5 +151,39 @@ namespace ConnectedAnimationApp
             (element2 as Rectangle).VerticalAlignment = PositionConfigurations[PositionIndex].Item2.Item1;
             (element2 as Rectangle).HorizontalAlignment = PositionConfigurations[PositionIndex].Item2.Item2;
         }
+
+        private ConnectedAnimationConfiguration GetSelectedConfiguration()
+        {
+            List<RadioButton> buttons = new List<RadioButton>();
+            foreach(UIElement e in ConfigurationStackPanel.Children)
+            {
+                if ((e as RadioButton) != null && (e as RadioButton).IsChecked == true)
+                {
+                    return GetConfigurationFromRadioButton(e as RadioButton);
+                }
+            }
+
+            return null;
+        }
+
+        private ConnectedAnimationConfiguration GetConfigurationFromRadioButton(RadioButton b)
+        {
+            switch (b.Content as String)
+            {
+                case "Default":
+                    return null;
+
+                case "Gravity":
+                    return new GravityConnectedAnimationConfiguration();
+
+                case "Direct":
+                    return new DirectConnectedAnimationConfiguration();
+
+                case "Basic":
+                    return new BasicConnectedAnimationConfiguration();                    
+            }
+            return null;
+        }
+
     }
 }

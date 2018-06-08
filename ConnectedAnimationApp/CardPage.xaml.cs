@@ -53,6 +53,8 @@ namespace ConnectedAnimationApp
             ConnectedAnimation animation = ConnectedAnimationService.GetForCurrentView().GetAnimation("ca2");
             if (animation != null)
             {
+                animation.Configuration = new DirectConnectedAnimationConfiguration();
+
                 animation.Completed += Animation_Completed;
 
                 await collection.TryStartConnectedAnimationAsync(animation, _storedItem, "connectedElement");

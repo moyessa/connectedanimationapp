@@ -8,18 +8,33 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <StackPanel>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <StackPanel>
 
-            <Button Content="Start Animation" Click="Button_Click" />
-            <Button Content="Change Position" Click="Button_Click_1" />
-            <TextBlock Text="Duration" />
-            <StackPanel Orientation="Horizontal">
-                <RadioButton Content="Default" IsChecked="True"  />
-                <RadioButton x:Name="SlowDurationRadioButton" Content="Slow" />
+                <Button Content="Start Animation" Click="Button_Click" HorizontalAlignment="Stretch" Style="{ThemeResource AccentButtonStyle}" Margin="5" />
+                <Button Content="Change Position" Click="Button_Click_1" HorizontalAlignment="Stretch" Margin="5" />
+                
+                <TextBlock Text="Duration" Style="{ThemeResource BodyTextBlockStyle}"  />
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <RadioButton Content="Default" IsChecked="True"  />
+                    <RadioButton x:Name="SlowDurationRadioButton" Content="Slow" />
+                </StackPanel>
+
+                <TextBlock Text="Configuration" Style="{ThemeResource BodyTextBlockStyle}" />
+                <StackPanel x:Name="ConfigurationStackPanel" Margin="5">
+                    <RadioButton Content="Default" IsChecked="True"  />
+                    <RadioButton Content="Gravity" />
+                    <RadioButton Content="Direct" />
+                    <RadioButton Content="Basic" />
+                </StackPanel>
+
+
             </StackPanel>
-
-            <Grid x:Name="RootGrid"  Width="500" Height="500" Background="White" />
-
-        </StackPanel>
+            <Grid x:Name="RootGrid"  Width="500" Height="500" Background="White" Grid.Column="1" />
+        </Grid>
     </Grid>
 </Page>

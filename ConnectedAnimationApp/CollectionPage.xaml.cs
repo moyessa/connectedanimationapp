@@ -56,6 +56,7 @@ namespace ConnectedAnimationApp
                 ConnectedAnimation animation = ConnectedAnimationService.GetForCurrentView().GetAnimation("ca2");
                 if (animation != null)
                 {
+                    animation.Configuration = new DirectConnectedAnimationConfiguration();
                     await collection.TryStartConnectedAnimationAsync(animation, _storeditem, "connectedElement");
                 }
             }

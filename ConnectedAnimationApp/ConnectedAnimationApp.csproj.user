@@ -5,7 +5,7 @@
     <UseEmulator>true</UseEmulator>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
-    <RemoteDebugEnabled>false</RemoteDebugEnabled>
+    <RemoteDebugEnabled>true</RemoteDebugEnabled>
     <RemoteDebugMachine>stmoy-lenovo:4022</RemoteDebugMachine>
     <AuthenticationMode>None</AuthenticationMode>
   </PropertyGroup>
