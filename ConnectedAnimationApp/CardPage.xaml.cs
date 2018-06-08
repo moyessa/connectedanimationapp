@@ -30,7 +30,7 @@ namespace ConnectedAnimationApp
             this.InitializeComponent();
 
             var items = new List<int>();
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 30; i++)
             {
                 items.Add(i);
             }

@@ -9,4 +9,10 @@
     <RemoteDebugMachine>stmoy-lenovo:4022</RemoteDebugMachine>
     <AuthenticationMode>None</AuthenticationMode>
   </PropertyGroup>
+  <PropertyGroup>
+    <AppxPackageIsForStore>False</AppxPackageIsForStore>
+    <AppxShowAllApps>False</AppxShowAllApps>
+    <AppxBuildConfigurationSelection>x86|x64|arm</AppxBuildConfigurationSelection>
+    <PackageOptionalProjectsInIdeBuilds>True</PackageOptionalProjectsInIdeBuilds>
+  </PropertyGroup>
 </Project>

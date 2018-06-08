@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" RequestedTheme="Dark">
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <GridView x:Name="collection" IsItemClickEnabled="True" ItemClick="TipsGrid_ItemClick" HorizontalAlignment="Center" MaxWidth="1400">
             <GridView.ItemContainerStyle>
                 <Style BasedOn="{StaticResource GridViewItemRevealStyle}" TargetType="GridViewItem">
@@ -26,7 +26,7 @@
                         <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="{ThemeResource SystemAccentColor}" Height="100">
                             <TextBlock Text="Header" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{ThemeResource TitleTextBlockStyle}" />
                         </Grid>
-                        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="{ThemeResource SystemBaseLowColor}" Grid.Row="1">
+                        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="LightGray" Grid.Row="1">
                             <TextBlock Text="Content" Margin="12" />
                         </Grid>
                     </Grid>
@@ -51,7 +51,7 @@
                         </Button.Content>
                     </Button>
                 </Grid>
-                <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Grid.Row="1">
+                <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="LightGray" Grid.Row="1">
                     <TextBlock Text="Content" Style="{ThemeResource BaseTextBlockStyle}" Margin="12" />
                 </Grid>
             </Grid>
