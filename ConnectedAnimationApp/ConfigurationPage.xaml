@@ -31,9 +31,18 @@
                     <RadioButton Content="Direct" />
                     <RadioButton Content="Basic" />
                 </StackPanel>
+
+                <TextBlock Text="Lives in Z" Style="{ThemeResource BaseTextBlockStyle}" Margin="5,10,5,5" />
+                <StackPanel Margin="5">
+                    <CheckBox Content="Element1" Checked="Element1ZCheckBox_Checked" Unchecked="Element1ZCheckBox_Unchecked" />
+                    <CheckBox Content="Element2" Checked="Element2ZCheckBox_Checked" Unchecked="Element2ZCheckBox_Unchecked" />
+                    <TextBox x:Name="ZDepthTextBox" Header="Z Depth" Text="32" />
+                </StackPanel>
             </StackPanel>
-            
-            <Grid x:Name="RootGrid"  Width="500" Height="500" Background="White" Grid.Column="1" />
+
+            <Grid x:Name="BackgroundGrid"  Width="500" Height="500" Background="White" Grid.Column="1"  />
+            <Grid x:Name="RootGrid" Width="500" Height="500"  Grid.Column="1" />
+
         </Grid>
     </Grid>
 </Page>

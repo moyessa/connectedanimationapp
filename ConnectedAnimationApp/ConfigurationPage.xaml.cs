@@ -33,11 +33,14 @@ namespace ConnectedAnimationApp
             RootGrid.Children.Add(CreateOrGetElement1());
 
             animationDefaultDuration = ConnectedAnimationService.GetForCurrentView().DefaultDuration;
+
+            sharedShadow.Receivers.Add(BackgroundGrid);
         }
 
         UIElement element1;
         UIElement element2;
         TimeSpan animationDefaultDuration;
+        ThemeShadow sharedShadow = new ThemeShadow();
 
         List<Tuple<VerticalAlignment, HorizontalAlignment>> Positions = new List<Tuple<VerticalAlignment, HorizontalAlignment>>()
         {
@@ -77,8 +80,8 @@ namespace ConnectedAnimationApp
                     Width = 50,
                     Height = 50,
                     Fill = new SolidColorBrush(Windows.UI.Colors.Red),
-                    //Shadow = new ThemeShadow(),
-                    //Translation = new System.Numerics.Vector3(0, 0, 15)
+                    Shadow = sharedShadow,
+                    TranslationTransition = new Vector3Transition() { Duration = TimeSpan.FromSeconds(1) }
                 };
                 //element1 = new TextBlock()
                 //{
@@ -110,6 +113,8 @@ namespace ConnectedAnimationApp
                     Width = 75,
                     Height = 75,
                     Fill = new SolidColorBrush(Windows.UI.Colors.Blue),
+                    Shadow = sharedShadow,
+                    TranslationTransition = new Vector3Transition() { Duration = TimeSpan.FromSeconds(1) }
                 };
 
                 UpdateElement2Position();
@@ -201,5 +206,30 @@ namespace ConnectedAnimationApp
             return null;
         }
 
+        int GetZDepth()
+        {
+            int ZDepthValue = 32;
+            bool b = Int32.TryParse(ZDepthTextBox.Text, out ZDepthValue);
+            if (!b) return 32;
+            ZDepthTextBox.Text = ZDepthValue.ToString();
+            return ZDepthValue;
+        }
+
+        private void Element1ZCheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            CreateOrGetElement1().Translation = new System.Numerics.Vector3(0, 0, GetZDepth());
+        }
+        private void Element2ZCheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            CreateOrGetElement2().Translation = new System.Numerics.Vector3(0, 0, GetZDepth());
+        }
+        private void Element1ZCheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            CreateOrGetElement1().Translation = new System.Numerics.Vector3(0);
+        }
+        private void Element2ZCheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            CreateOrGetElement2().Translation = new System.Numerics.Vector3(0);
+        }
     }
 }
